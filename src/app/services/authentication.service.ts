@@ -1,15 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Authentication } from '../interfaces/auth';
 
-interface User {
-  email: string;
-  fullName: string;
-}
-
-interface Authentication {
-  isAuthenticated: boolean,
-  token: string;
-  user: User;
-}
 
 
 @Injectable({
@@ -21,9 +12,13 @@ export class AuthenticationService {
 
   constructor() { }
 
-isAuthenticated(): boolean {
-  return !!(this.authentication?.isAuthenticated);
-}
+  isAuthenticated(): boolean {
+    return !!(this.authentication?.isAuthenticated);
+  }
+
+  getToken(){
+    return this.authentication?.token;
+  }
 
   logout() {
     this.authentication = undefined;
