@@ -18,7 +18,7 @@ export class JSONPlaceholderClientService {
 
   getPost(id: string) {
 
-    return this.httpClient.get(`${this.BASE_URL}/posts/${id}`).pipe(
+    return this.httpClient.get<Post>(`${this.BASE_URL}/posts/${id}`).pipe(
       catchError(error => {
         throw error;
       })
@@ -43,7 +43,7 @@ export class JSONPlaceholderClientService {
     )
   }
 
-  deletePostComments(id: string) {
+  deletePost(id: string) {
 
     return this.httpClient.delete(`${this.BASE_URL}/posts/${id}`).pipe(
       catchError(error => {
