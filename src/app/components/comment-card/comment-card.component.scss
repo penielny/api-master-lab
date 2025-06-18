@@ -1,0 +1,29 @@
+.comment-wrapper{
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+
+    img {
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+    }
+
+    .comment-sumary{
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        .email{
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: lowercase;
+            color: rgb(82, 82, 255);
+        }
+        .body{
+             font-size: 14px;
+            font-weight: 400;
+            color: rgb(71, 71, 71);
+            line-height: 1.5rem;
+        }
+    }
+}

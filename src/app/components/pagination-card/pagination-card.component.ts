@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-pagination-card',
-  imports: [NgIf],
+  imports: [],
   templateUrl: './pagination-card.component.html',
   styleUrl: './pagination-card.component.scss'
 })

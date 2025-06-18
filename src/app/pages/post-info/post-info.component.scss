@@ -1,0 +1,98 @@
+.post-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+    align-items: center;
+
+    .action-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+
+        button {
+            padding: 5px 15px;
+            border-radius: 20px;
+            color: aliceblue;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            svg {
+                height: 20px;
+            }
+        }
+
+        .edit {
+            background-color: rgb(170, 170, 170);
+        }
+
+        .trash {
+            background-color: rgb(255, 55, 55);
+        }
+    }
+
+    .post-wrapper {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        width: 70%;
+        text-align: center;
+
+        h3 {
+            font-weight: bold;
+            font-size: 2.5rem;
+            text-align: center;
+            text-transform: capitalize;
+        }
+
+        .post-cover {
+            height: 40vh;
+            width: 100%;
+            border-radius: 1rem;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .post-body {
+            text-align: start;
+            line-height: 2rem;
+            font-weight: 400;
+            color: rgb(80, 80, 80);
+        }
+    }
+
+    app-comments-list {
+        width: 70%;
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    .post-info-wrapper {
+
+        .post-wrapper {
+
+            width: 90%;
+
+            h3 {
+                font-weight: bold;
+                font-size: 2rem;
+                text-align: center;
+                text-transform: capitalize;
+            }
+
+        }
+
+        app-comments-list {
+            width: 90%;
+        }
+
+    }
+
+}
