@@ -1,14 +1,15 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { AuthenticationService } from '../../services/authentication.service';
 import { RouterLink } from '@angular/router';
+import { NotifcationComponent } from '../notifcation/notifcation.component';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink],
+  imports: [RouterLink,NotifcationComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, OnDestroy {
   isAuthenticated: boolean;
 
   constructor(private authenticationService: AuthenticationService) {
@@ -25,6 +26,10 @@ export class NavbarComponent implements OnInit {
         this.isAuthenticated = false;
       },
     })
+  }
+
+  ngOnDestroy(): void {
+   
   }
 
   doLogin() {

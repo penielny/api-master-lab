@@ -1,0 +1,9 @@
+.comments-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    h3 {
+        text-align: start;
+    }
+}

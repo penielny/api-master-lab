@@ -55,7 +55,24 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
+            },
+            "stagging": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.stagging.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -68,6 +85,9 @@
             },
             "development": {
               "buildTarget": "api-master:build:development"
+            },
+            "stagging": {
+              "buildTarget": "api-master:build:stagging"
             }
           },
           "defaultConfiguration": "development"

@@ -31,6 +31,10 @@ nav {
                 width: 20px;
             }
         }
+        button{
+            font-weight: 600;
+            color: rgb(58, 58, 58);
+        }
     }
 
     img {
@@ -42,3 +46,23 @@ nav {
         cursor: pointer;
     }
 }
+
+@media screen and (max-width: 425px) {
+    nav {
+        h1 {
+            padding-right: 1rem;
+             font-size: 1.3rem;
+        }
+
+        div {
+            gap: 1.5rem;
+        }
+
+    img {
+        height: 30px;
+        width: 30px;
+        display: none;
+    }
+}
+}
+

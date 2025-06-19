@@ -37,6 +37,9 @@
             font-size: 15px;
             background-color: rgb(231, 231, 231);
         }
+         .sm-st{
+            display: none;
+        }
 
         .active{
             background-color: rgb(0, 132, 255);
@@ -44,4 +47,17 @@
         }
     }
 
+}
+
+@media screen and (max-width: 425px) {
+  .pagination-container {
+    .pagination{
+        .page-btn{
+            display: none;
+        }
+        .sm-st{
+            display: inline;
+        }
+    }
+  }
 }
