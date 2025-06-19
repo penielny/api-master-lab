@@ -28,7 +28,7 @@ export class PostsService {
 
 
   addPost(post: Post) {
-
+    this.posts.update(prev => [post, ...prev])
   }
 
   updatePost() {
