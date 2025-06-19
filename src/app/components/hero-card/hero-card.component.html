@@ -1,0 +1,11 @@
+<div class="hero-card">
+    @if (post) {
+    <a [routerLink]="['/post',post.id]" class="post-container">
+        <img class="post-cover" [src]="imageCover" />
+        <div class="post-summary">
+            <h3 class="post-title">{{post.title}}</h3>
+            <p class="post-body">{{post.body}}</p>
+        </div>
+    </a>
+    }
+</div>

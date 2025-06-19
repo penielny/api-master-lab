@@ -1,0 +1,44 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+
+    h1 {
+        font-weight: bold;
+        font-size: 1.5rem;
+        padding-right: 1.5rem;
+        color: rgb(0, 0, 0);
+        border-right: 1px solid rgba(139, 139, 139, 0.584);
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            color: rgb(58, 58, 58);
+            cursor: pointer;
+            font-size: medium;
+
+            svg {
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+
+    img {
+        height: 40px;
+        width: 40px;
+        object-position: center;
+        object-fit: cover;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+}

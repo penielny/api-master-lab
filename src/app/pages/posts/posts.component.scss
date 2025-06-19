@@ -1,0 +1,28 @@
+.post-list {
+    padding: 0 1rem;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    overflow-x: hidden;
+}
+
+
+@media screen and (max-width: 768px) {
+  .post-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .post-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media screen and (min-width: 769px) {
+  .post-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
