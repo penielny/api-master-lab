@@ -15,7 +15,7 @@ export class JSONPlaceholderClientService {
   httpClient: HttpClient = inject(HttpClient)
   errorService: ErrorService = inject(ErrorService)
 
-  BASE_URL = environment.jsonApiBaseUrl;
+  BASE_URL = environment.jsonBaseUrl;
 
   constructor(private cacheHttpClient: CacheHttpService) { }
 

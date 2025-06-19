@@ -8,13 +8,15 @@ import { PaginationService } from './pagination.service';
 })
 export class PostsService {
   posts: WritableSignal<Post[]> = signal([])
-  page!: number;
+  page: number =1;
 
   constructor(private jsonPlaceholderApiService: JSONPlaceholderClientService, private pagination: PaginationService) {
 
     effect(() => {
       this.page = this.pagination.page();
     })
+
+    this.getPost()
 
   }
 
@@ -26,18 +28,20 @@ export class PostsService {
     })
   }
 
-
   addPost(post: Post) {
-
+    this.posts.update(prev => [post, ...prev]);
   }
 
-  updatePost() {
-
+  updatePost(updatedPost: Post) {
+    this.posts.update(prev =>
+      prev.map(post => post.id === updatedPost.id ? updatedPost : post)
+    );
   }
 
-  removePost() {
-
+  removePost(postId: number) {
+    this.posts.update(prev =>
+      prev.filter(post => post.id !== postId)
+    );
   }
-
 
 }

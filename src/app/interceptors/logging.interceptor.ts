@@ -13,7 +13,7 @@ export const loggingInterceptor: HttpInterceptorFn = (req, next) => {
                 }
             },
             error: (error) => {
-                console.error('HTTP Error:', error);
+                
             }
         })
     );

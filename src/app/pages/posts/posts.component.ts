@@ -37,7 +37,7 @@ export class PostsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.postService.getPost()
+  
   }
 
 }
