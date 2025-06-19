@@ -1,15 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Authentication } from '../interfaces/auth';
+import { BehaviorSubject, Observable } from 'rxjs';
 
-interface User {
-  email: string;
-  fullName: string;
-}
-
-interface Authentication {
-  isAuthenticated: boolean,
-  token: string;
-  user: User;
-}
 
 
 @Injectable({
@@ -17,23 +9,44 @@ interface Authentication {
 })
 export class AuthenticationService {
   private prefix: string = "api-master::";
-  private authentication: Authentication | undefined = undefined;
+
+  private authenticationSubject = new BehaviorSubject<Authentication | undefined>(undefined);
+  public authentication$: Observable<Authentication | undefined> = this.authenticationSubject.asObservable();
 
   constructor() { }
 
-isAuthenticated(): boolean {
-  return !!(this.authentication?.isAuthenticated);
-}
+  isAuthenticated(): boolean {
+    const currentAuthValue = this.authenticationSubject.getValue()
+    return !!(currentAuthValue?.isAuthenticated);
+  }
 
-  logout() {
-    this.authentication = undefined;
+  getToken(): string | undefined {
+    const currentAuthValue = this.authenticationSubject.getValue()
+    return currentAuthValue?.token;
+  }
+
+  logout(): void {
+    this.authenticationSubject.next(undefined);
   }
 
 
-  getLocalStoreState() {
+  login(): void {
+
+    this.authenticationSubject.next({
+      token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.KMUFsIDTnFmyG3nMiGM6H9FNFUROf3wh7SmqJp-QV30",
+      isAuthenticated: true,
+      user: {
+        email: "example@domain.com",
+        fullName: "Sweet Stuffs"
+      }
+    })
+  }
+
+
+  getLocalStoreState(): void {
     const localStoreString = localStorage.getItem(`${this.prefix}auth`);
     if (!localStoreString) return;
-    this.authentication = JSON.parse(localStoreString)
+    this.authenticationSubject.next(JSON.parse(localStoreString))
   }
 
 
