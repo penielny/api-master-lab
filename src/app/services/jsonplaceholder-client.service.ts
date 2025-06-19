@@ -31,6 +31,7 @@ export class JSONPlaceholderClientService {
 
   getPost(id: string) {
 
+
     return this.cacheHttpClient.get<Post>(`${this.BASE_URL}/posts/${id}`).pipe(
       retry(2),
       catchError(error => {

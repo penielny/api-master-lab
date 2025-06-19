@@ -23,9 +23,11 @@ export class AuthenticationService {
   }
 
 
+
   userInfo() {
     return this.authenticationSubject.getValue()
   }
+
 
   getToken(): string | undefined {
     const currentAuthValue = this.authenticationSubject.getValue()
@@ -38,6 +40,7 @@ export class AuthenticationService {
 
 
   login(): void {
+    
     const authResponse = {
       token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.KMUFsIDTnFmyG3nMiGM6H9FNFUROf3wh7SmqJp-QV30",
       isAuthenticated: true,
@@ -49,13 +52,16 @@ export class AuthenticationService {
     }
     this.authenticationSubject.next(authResponse)
     localStorage.setItem(`${this.prefix}auth`, JSON.stringify(authResponse))
+
   }
 
 
   getLocalStoreState(): void {
+    
     const localStoreString = localStorage.getItem(`${this.prefix}auth`);
     if (!localStoreString) return;
     this.authenticationSubject.next(JSON.parse(localStoreString))
+    
   }
 
 
