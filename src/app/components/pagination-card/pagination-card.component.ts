@@ -38,7 +38,6 @@ export class PaginationCardComponent  {
   }
 
   get totalPagesArray(): number[] {
-    console.log(this.totalPages)
     return Array.from({ length: this.totalPages/10 }, (_, i) => i + 1);
   }
 

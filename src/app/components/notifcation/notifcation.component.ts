@@ -16,7 +16,6 @@ export class NotifcationComponent {
 
   constructor(private alertService: AlertService) {
     effect(() => {
-      console.log('Alert updated:', this.alertService.alert());
       this.isDisplay = this.alertService.isAlerted()
       this.alertData = this.alertService.alert()
     });
@@ -27,7 +26,7 @@ export class NotifcationComponent {
 
 
   close() {
-this.alertService.clearAlert()
+    this.alertService.clearAlert()
   }
 
 }
