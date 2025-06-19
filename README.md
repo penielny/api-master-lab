@@ -2,7 +2,7 @@
 
 An Angular application that demonstrates proficiency in working with
 APIs, including data fetching, error handling, authentication, optimization, and
-environment configuration.
+environment configuration
 
 Live URL: [live demo](https://api-lab.netlify.app)
 
