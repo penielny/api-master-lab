@@ -1,0 +1,47 @@
+.alert {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: start;
+    transition: all;
+    .message {
+      flex:1;
+      font-weight: 500;
+    }
+
+    .close-btn {
+        color: white;
+        padding: 0.3rem;
+        background-color: rgba(125, 125, 125, 0.668);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        svg {
+            stroke-width: 2px;
+            height: 1rem;
+        }
+    }
+}
+
+.alert.open {
+    height: fit-content;
+}
+
+.alert.close {
+    display: none;
+    height: 0px;
+    overflow: hidden;
+}
+
+
+.error {
+    background-color: rgb(255, 153, 153);
+    color: rgb(143, 5, 5);
+}
+
+.success {
+    background-color: rgb(158, 255, 182);
+    color: rgb(2, 83, 2);
+}

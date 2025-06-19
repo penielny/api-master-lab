@@ -1,6 +1,7 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { JSONPlaceholderClientService } from '../../services/jsonplaceholder-client.service';
 import {  Router } from '@angular/router';
+import { AlertService } from '../../services/alert.service';
 
 @Component({
   selector: 'app-delete-modal',
@@ -13,7 +14,7 @@ export class DeleteModalComponent {
   @Output() onClose: EventEmitter<void> = new EventEmitter()
   jsonPlaceholderClient = inject(JSONPlaceholderClientService)
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private alert:AlertService) { }
 
 
   onDelete() {
@@ -22,6 +23,7 @@ export class DeleteModalComponent {
         console.log(value)
       },
       complete:()=> {
+        this.alert.success("Deleted Success","You successfuly deleted post with id "+this.id)
         this.router.navigate(["/"])
       },
       error(err) {

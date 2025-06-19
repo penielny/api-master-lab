@@ -1,7 +1,7 @@
 <app-hero-card [post]="heroPost"></app-hero-card>
 <div class="post-list">
-    @for (post of posts[page]; track $index) {
+    @for (post of posts; track $index) {
     <app-news-card [post]="post"></app-news-card>
     }
 </div>
-<!-- <app-pagination-card [currentPage]="page" [totalPages]="totalPages"></app-pagination-card> -->
+<app-pagination-card></app-pagination-card>

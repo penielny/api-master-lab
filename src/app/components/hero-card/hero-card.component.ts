@@ -12,17 +12,16 @@ import { RouterLink } from '@angular/router';
 export class HeroCardComponent {
   @Input() post!:Post;
 
-  imageCover:string = "https://images.unsplash.com/photo-1621274283140-e4450435a76a?q=80&w=2920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  imageCover:string = "https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg"
   unsplashService = inject(UnsplashService)
 
   ngOnInit(): void {
     this.unsplashService.getRandomImage("developer").subscribe({
       next : (value) =>{
-        console.log(value)
         this.imageCover = value;
       },
       error:(err)=> {
-        this.imageCover = "https://images.unsplash.com/photo-1621274283140-e4450435a76a?q=80&w=2920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        this.imageCover = "https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg"
       },
     })
     

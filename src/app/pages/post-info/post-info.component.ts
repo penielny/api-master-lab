@@ -26,7 +26,7 @@ export class PostInfoComponent implements OnInit {
   isDeleteModal: boolean = false;
 
   onEdit() {
-    this.router.navigate(["/edit"])
+    this.router.navigate([`/post/${this.post.id}/edit`]);
   }
   onDelete() {
     this.isDeleteModal = true;
@@ -45,7 +45,6 @@ export class PostInfoComponent implements OnInit {
 
     this.unsplashService.getRandomImage("art").subscribe({
       next: (value) => {
-        console.log(value)
         this.imageCover = value;
       },
       error: (err) => {

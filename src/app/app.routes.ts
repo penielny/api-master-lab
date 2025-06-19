@@ -14,16 +14,17 @@ export const routes: Routes = [
     {
         path: "post/:id",
         component: PostInfoComponent,
+        pathMatch: "full",
     },
     {
-        path: "edit",
+        path: "post/:id/edit",
         component: EditPostComponent,
-        canActivate:[protectedRouteGuard]
+        canActivate: [protectedRouteGuard]
     },
     {
         path: "new",
         component: NewPostComponent,
-         canActivate:[protectedRouteGuard]
+        canActivate: [protectedRouteGuard]
     },
 
 ];

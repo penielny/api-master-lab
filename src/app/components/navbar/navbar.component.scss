@@ -31,6 +31,10 @@ nav {
                 width: 20px;
             }
         }
+        button{
+            font-weight: 600;
+            color: rgb(58, 58, 58);
+        }
     }
 
     img {
@@ -57,6 +61,7 @@ nav {
     img {
         height: 30px;
         width: 30px;
+        display: none;
     }
 }
 }
